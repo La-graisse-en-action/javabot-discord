@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Collections;
+
 import javax.security.auth.login.LoginException;
 
 import io.github.cdimascio.dotenv.Dotenv;
@@ -14,6 +16,8 @@ public class BotBuilder {
 	public static JDA setConfig(JDABuilder builder) throws LoginException {
 		builder.setActivity(Activity.watching("Hentai"));
 		builder.setStatus(OnlineStatus.ONLINE);
+		JDABuilder.createLight(getToken(), Collections.emptyList());
+
 		JDA jda = builder.build();
 		return jda;
 	}

@@ -7,11 +7,12 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 public class DiscordBot extends ListenerAdapter {
-	
+
 	public static void main(String[] args) throws LoginException, InterruptedException {
 		JDABuilder botBuilder = JDABuilder.createDefault(BotBuilder.getToken());
 		JDA jda = BotBuilder.setConfig(botBuilder);
-		
+
+		jda.upsertCommand("info", "Show info about the bot").queue();
 		jda.addEventListener(new Commands());
 	}
 }
