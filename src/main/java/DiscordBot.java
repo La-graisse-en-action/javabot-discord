@@ -12,7 +12,7 @@ public class DiscordBot extends ListenerAdapter {
 		JDABuilder botBuilder = JDABuilder.createDefault(BotBuilder.getToken());
 		JDA jda = BotBuilder.setConfig(botBuilder);
 
-		jda.upsertCommand("info", "Show info about the bot").queue();
+		// Listen the events
 		jda.addEventListener(new Commands());
 	}
 }
