@@ -11,7 +11,8 @@ public class Listener implements EventListener {
 		JDA jda = JDABuilder.createDefault("token").addEventListeners(new Listener()).build();
 		jda.awaitReady();
 	}
-
+	
+	@Override
 	public void onEvent(GenericEvent event) {
 		if (event instanceof ReadyEvent) {
 			System.out.println("Api is ready!");
