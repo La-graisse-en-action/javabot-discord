@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class Commands extends ListenerAdapter {
+public class BaseCommand extends ListenerAdapter {
 
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
@@ -33,7 +33,7 @@ public class Commands extends ListenerAdapter {
 		if (event.getName().equals("info")) {
 			// you need the reply because it is the method that returns the message,
 			// although the content in the method will not be displayed
-			event.reply("Info").setEphemeral(false).flatMap(v -> event.getHook().editOriginal("Hiiiiii")).queue();
+			event.reply("").setEphemeral(false).flatMap(v -> event.getHook().editOriginal("Hiiiiii")).queue();
 		}
 	}
 
