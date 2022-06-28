@@ -23,7 +23,7 @@ public class BotBuilder {
 	 * @throws LoginException
 	 */
 	public static JDA setConfig(JDABuilder builder) throws LoginException {
-		builder.setActivity(Activity.watching("Hentai"));
+		builder.setActivity(Activity.watching("Netflix"));
 		builder.setStatus(OnlineStatus.ONLINE);
 		JDABuilder.createLight(getToken(), Collections.emptyList());
 
@@ -49,6 +49,8 @@ public class BotBuilder {
 	 * @param <b>JDA</b> jda
 	 */
 	private static void createSlashCommands(JDA jda) {
+
 		jda.upsertCommand("info", "Show info about the bot").queue();
+		jda.upsertCommand("help", "Show helpfully info about the bot").queue();
 	}
 }

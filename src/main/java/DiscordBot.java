@@ -1,5 +1,6 @@
 import javax.security.auth.login.LoginException;
 
+import events.HelpEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import utils.BotBuilder;
 import utils.BaseCommand;
@@ -13,5 +14,6 @@ public class DiscordBot extends ListenerAdapter {
 
 		// Listen the events
 		jda.addEventListener(new BaseCommand());
+        jda.addEventListener(new HelpEvent());
 	}
 }
